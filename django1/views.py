@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse
+
 from django_twilio.decorators import twilio_view
 from twilio.twiml import Response
 
@@ -12,5 +15,13 @@ def sms(request):
 @twilio_view
 def ring(request):
     r = Response()
-    r.play('http://movie.10yan.com/2009cjzt/mp3/xw3.mp3')
+    r.play('http://bit.ly/phaltsw')
     return r
+    
+# This is a plain view that returns manually written TwiML
+# Note: it's not linked to a URL in this example.
+@csrf_exempt
+def sms_plain(request):
+    twiml = '<Response><Message>Plain old TwiML</Message></Response>'
+    return HttpResponse(twiml, content_type='text/xml')
+
