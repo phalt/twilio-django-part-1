@@ -25,3 +25,14 @@ def sms_plain(request):
     twiml = '<Response><Message>Plain old TwiML</Message></Response>'
     return HttpResponse(twiml, content_type='text/xml')
 
+
+# This is an example that looks for a parameter in the request
+# and returns a personalised message
+@twilio_view
+def sms_personal(request):
+    name = request.POST.get('Body', '')
+    msg = 'Hey %s, how are you today?'
+    
+    r = Response()
+    r.message(msg)
+    return r
