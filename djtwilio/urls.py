@@ -11,6 +11,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     #Here we add our Twilio URLs
-    url(r'^sms/$', 'django1.views.sms'),
-    url(r'^ring/$', 'django1.views.ring'),
+    url(r'^sms/$', 'djtwilio.views.sms'),
+    url(r'^ring/$', 'djtwilio.views.ring'),
 )

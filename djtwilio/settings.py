@@ -1,5 +1,5 @@
 """
-Django settings for django1 project.
+Django settings for djtwilio project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -47,9 +47,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'django1.urls'
+ROOT_URLCONF = 'djtwilio.urls'
 
-WSGI_APPLICATION = 'django1.wsgi.application'
+WSGI_APPLICATION = 'djtwilio.wsgi.application'
 
 
 # Database
