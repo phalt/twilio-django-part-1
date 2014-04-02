@@ -31,7 +31,7 @@ def sms_plain(request):
 @twilio_view
 def sms_personal(request):
     name = request.POST.get('Body', '')
-    msg = 'Hey %s, how are you today?'
+    msg = 'Hey %s, how are you today?' % (name)
     
     r = Response()
     r.message(msg)
